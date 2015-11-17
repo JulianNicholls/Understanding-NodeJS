@@ -1,4 +1,5 @@
-var fs          = require('fs');
+var fs = require('fs');
+
 var readable    = fs.createReadStream(__dirname + '/bobross.txt', { encoding: 'utf8' });
 var writable    = fs.createWriteStream(__dirname + '/bobross-copy.txt');
 
