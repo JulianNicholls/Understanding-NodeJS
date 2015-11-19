@@ -12,5 +12,5 @@ do the same as I have done. I have set up a number of aliases in my
 127.0.0.1 node.local    # This is the line that I added
 ```
 
-Otherwise, you can replace the ```'rails.local'``` in the listen() call in the
-files with either ```'localhost'``` or ```'127.0.0.1'```
+Otherwise, you can replace the ```'rails.local'``` in the ```listen()```
+call in the files with either ```'localhost'``` or ```'127.0.0.1'```
