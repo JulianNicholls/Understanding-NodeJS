@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node <%= edit ? 'Edit' : 'Show' %> Person page</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <h1>Person: <%= id %></h1>
+    <% if(edit) { %>
+        <p>Here are the fields to edit the person, blah, blah, blah.</p>
+    <% } else { %>
+        <p>This is what the person is like, rhubarb, rhubarb.</p>
+    <% } %>
+</body>
+</html>

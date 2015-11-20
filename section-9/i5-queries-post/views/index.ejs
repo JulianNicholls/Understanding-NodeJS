@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node Templated page</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+    <h1>Templated home page</h1>
+    <p>Hello world</p>
+
+    <form action="/person" method="POST">
+        <label for="id">ID</label>
+        <input type="text" name="id" value="3" /><br />
+        <label for="first">First Name</label>
+        <input type="text" name="first" /><br />
+        <label for="last">Last Name</label>
+        <input type="text" name="last" /><br />
+
+        <input type="submit" value="POST to /person" />
+    </form>
+
+    <button id="post-json">Post JSON to /person.json</button>
+
+    <script>
+    $(function() {
+        $("#post-json").on('click', function () {
+            $.ajax({
+                type: 'POST',
+                url: '/person.json',
+                data: JSON.stringify({
+                    id: 723,
+                    first: 'John',
+                    last: 'Doe',
+                }),
+                dataType: 'json',
+                contentType: 'application/json'
+            });
+        });
+    });
+    </script>
+</body>
+</html>
