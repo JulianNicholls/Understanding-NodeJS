@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node <%= first.length > 0 ? 'Update' : 'Show' %> Person page</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <h1>Person: <%= id %></h1>
+
+    <p>Query String via GET: <%= qstring.length > 0 ? qstring : '(None)' %></p>
+
+    <% if(first.length > 0) { %>
+        <p>Updated data for person: <%= first + ' ' + last %> via <%= method %></p>
+    <% } else { %>
+        <p>This is what the person is like, rhubarb, rhubarb.</p>
+    <% } %>
+
+    <a href="/">Home</a>
+</body>
+</html>

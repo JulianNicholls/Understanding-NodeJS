@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User list page</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <h1>Users</h1>
+
+  <% if(users.length > 0) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+        <tbody>
+          <% users.forEach(function(user) { %>
+            <tr>
+              <td><%= user._id %></td>
+              <td><%= user.first_name %></td>
+              <td><%= user.last_name %></td>
+              <td><%= user.address %></td>
+            </tr>
+          <% }) %>
+      </tbody>
+    </table>
+  <% } %>
+  <a href="/">Home</a>
+</body>
+</html>
