@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Angular1">
+<head>
+    <meta charset="UTF-8">
+    <title>The MEAN Stack</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-controller="MainController as vm">
+  <h1>The MEAN Stack</h1>
+
+  <h2>People strangled through server-to-client-to-Angular</h2>
+  <ol>
+    <li ng-repeat="person in vm.people">
+      {{ person.name }}
+    </li>
+  </ol>
+
+<script>
+  var clientPeople = <%- JSON.stringify(serverPeople) %>;
+</script>
+  <script src='/assets/js/app.js'></script>
+</body>
+</html>
