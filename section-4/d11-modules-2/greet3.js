@@ -1,5 +1,5 @@
 // Export an object, which will be cached by require so changes to it
-// externally will be reflected in all returned vinstances.
+// externally will be reflected in all returned instances.
 function Greeter() {
     this.greeting = 'Hello from object';
 
