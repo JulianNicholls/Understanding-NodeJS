@@ -1,7 +1,7 @@
-var http = require('http');
-var fs   = require('fs');
+const http = require('http');
+const fs   = require('fs');
 
-http.createServer(function(request, response) {
+http.createServer((request, response) => {
     response.writeHead(200, { 'Content-Type': 'text/html' });
 
     fs.createReadStream(__dirname + '/index.html').pipe(response);

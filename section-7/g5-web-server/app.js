@@ -1,10 +1,11 @@
-var http = require('http');
-var fs   = require('fs');
+const http = require('http');
+const fs   = require('fs');
 
-http.createServer(function(request, response) {
+http.createServer((request, response) => {
     response.writeHead(200, { 'Content-Type': 'text/html' });
 
-    var html = fs.readFileSync(__dirname + '/index.html', 'utf8');
+    // Adding the encoding turns it into a string from a buffer
+    let html = fs.readFileSync(__dirname + '/index.html', 'utf8');
 
     html = html.replace('{message}', 'Hello Julian');
 

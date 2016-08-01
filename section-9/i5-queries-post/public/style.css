@@ -11,6 +11,10 @@ input, button, label {
     font-size: 16px;
 }
 
+input {
+    margin-top: 5px;
+}
+
 label {
     display: inline-block;
     float: left;

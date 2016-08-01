@@ -23,22 +23,22 @@
 
     <button id="post-json">Post JSON to /person.json</button>
 
-    <script>
-    $(function() {
-        $("#post-json").on('click', function () {
-            $.ajax({
-                type: 'POST',
-                url: '/person.json',
-                data: JSON.stringify({
-                    id: 723,
-                    first: 'John',
-                    last: 'Doe',
-                }),
-                dataType: 'json',
-                contentType: 'application/json'
-            });
+<script>
+$(function() {
+    $("#post-json").on('click', function () {
+        $.ajax({
+            type: 'POST',
+            url: '/person.json',
+            data: JSON.stringify({
+                id: 723,
+                first: 'John',
+                last: 'Doe',
+            }),
+            dataType: 'json',
+            contentType: 'application/json'
         });
     });
-    </script>
+});
+</script>
 </body>
 </html>

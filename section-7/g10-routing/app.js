@@ -1,7 +1,7 @@
-var http    = require('http');
-var fs      = require('fs');
+const http    = require('http');
+const fs      = require('fs');
 
-http.createServer(function(req, res) {
+http.createServer((req, res) => {
     if(req.url === '/') {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         fs.createReadStream(__dirname + '/index.html').pipe(res);
@@ -9,7 +9,7 @@ http.createServer(function(req, res) {
     else if(req.url === '/api') {
         res.writeHead(200, { 'Content-Type': 'application/json' });
 
-        var obj = {
+        const obj = {
             firstname: 'Julian',
             lastname: 'Nicholls',
             location: 'UK'
@@ -21,4 +21,4 @@ http.createServer(function(req, res) {
         res.writeHead(404);
         res.end();
     }
-}).listen(1337, 'node.local')
+}).listen(1337, 'node.local');

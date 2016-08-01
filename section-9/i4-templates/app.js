@@ -1,8 +1,8 @@
-var express = require('express');
-var fs      = require('fs');
-var moment  = require('moment');
+const express = require('express');
+const fs      = require('fs');
+const moment  = require('moment');
 
-var app     = express();
+const app     = express();
 
 // Static file serving.
 app.use('/assets', express.static(__dirname + '/public'));
@@ -16,25 +16,23 @@ app.use('/', function(req, res, next) {
 // Set view engine to EJS
 app.set('view engine', 'ejs')
 
-app.get('/', function(req, res) {
-    res.render('index');
-});
+app.get('/', (req, res) => { res.render('index'); });
 
-app.get('/person/:id', function(req, res) {
+app.get('/person/:id', (req, res) => {
     res.render('person', {
-        id: req.params.id,
+        id:   req.params.id,
         edit: false
     });
 });
 
-app.get('/person/:id/edit', function(req, res) {
+app.get('/person/:id/edit', (req, res) => {
     res.render('person', {
-        id: req.params.id,
+        id:   req.params.id,
         edit: true
     });
 });
 
-app.get('/api', function(req, res) {
+app.get('/api', (req, res) => {
     res.json({
         firstname: 'Julian',
         lastname: 'Nicholls',
@@ -44,7 +42,7 @@ app.get('/api', function(req, res) {
 });
 
 // get NODE_PORT environment variable, or default to 1967
-var port = process.env.NODE_PORT || 1967
+const port = process.env.NODE_PORT || 1967
 
 console.log(`Listening on port ${port}`);
 app.listen(port);

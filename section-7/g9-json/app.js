@@ -1,12 +1,12 @@
-var http = require('http');
+const http = require('http');
 
-http.createServer(function(request, response) {
+http.createServer((request, response) => {
     response.writeHead(200, { 'Content-Type': 'application/json' });
 
-    var obj = {
+    const obj = {
         firstname: 'Julian',
         lastname: 'Nicholls'
-    }
+    };
 
     response.end(JSON.stringify(obj));
 }).listen(1337, 'node.local');

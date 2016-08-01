@@ -1,14 +1,14 @@
-var express = require('express');
-var fs      = require('fs');
-var moment  = require('moment');
+const express = require('express');
+const fs      = require('fs');
+const moment  = require('moment');
 
-var app     = express();
+const app     = express();
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
     fs.createReadStream(__dirname + '/index.html').pipe(res);
 });
 
-app.get('/api', function(req, res) {
+app.get('/api', (req, res) => {
     res.json({
         firstname: 'Julian',
         lastname: 'Nicholls',
@@ -18,7 +18,8 @@ app.get('/api', function(req, res) {
 });
 
 // get NODE_PORT environment variable, or default to 1967
-var port = process.env.NODE_PORT || 1967
+const port = process.env.NODE_PORT || 1967
 
 console.log(`Listening on port ${port}`);
+
 app.listen(port);
