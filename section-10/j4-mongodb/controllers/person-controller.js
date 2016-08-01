@@ -1,18 +1,16 @@
-module.exports = function (app, Person) {
-    var parser  = require('body-parser');
+module.exports = (app, Person) => {
+    const parser  = require('body-parser');
 
-    var urlencodedParser = parser.urlencoded({ extended: false });
-    var jsonParser       = parser.json();
+    const urlencodedParser = parser.urlencoded({ extended: false });
+    const jsonParser       = parser.json();
 
-    app.get('/person/all', function (req, res) {
-        Person.find({}, function(err, users) {
-            res.render('person_list', {
-                users: users
-            });
+    app.get('/person/all', (req, res) => {
+        Person.find({}, (err, users) => {
+            res.render('person_list', { users: users });
         });
     });
 
-    app.get('/person/:id', function(req, res) {
+    app.get('/person/:id', (req, res) => {
         res.render('person', {
             id: req.params.id,
             qstring: req.query.qstr || '',
@@ -21,7 +19,7 @@ module.exports = function (app, Person) {
         });
     });
 
-    app.post('/person', urlencodedParser, function(req, res) {
+    app.post('/person', urlencodedParser, (req, res) => {
         res.render('person',  {
             id: req.body.id,
             qstring: req.query.qstr || '',
@@ -31,7 +29,5 @@ module.exports = function (app, Person) {
         });
     });
 
-    app.post('/person.json', jsonParser, function(req, res) {
-        console.log(req.body);
-    });
+    app.post('/person.json', jsonParser, (req, res) => { console.log(req.body); });
 };

@@ -1,16 +1,16 @@
-var express          = require('express');
+const express          = require('express');
 
-var staticController = require('./controllers/static-controller');
-var personController = require('./controllers/person-controller');
-var apiController    = require('./controllers/api-controller')
+const staticController = require('./controllers/static-controller');
+const personController = require('./controllers/person-controller');
+const apiController    = require('./controllers/api-controller')
 
-var app              = express();
+const app              = express();
 
 // Static file serving.
 app.use('/assets', express.static(__dirname + '/public'));
 
 // Log whenever anything is served.
-app.use('/', function(req, res, next) {
+app.use('/', (req, res, next) => {
     console.log(`Loading ${req.url}`);
     next();
 });
@@ -22,7 +22,7 @@ personController(app);
 apiController(app);
 
 // get NODE_PORT environment variable, or default to 1967
-var port = process.env.NODE_PORT || 1967
+const port = process.env.NODE_PORT || 1967
 
 console.log(`Listening on port ${port}`);
 app.listen(port);

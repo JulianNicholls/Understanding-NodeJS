@@ -1,5 +1,5 @@
-module.exports = function(app) {
-    var moment  = require('moment');
+module.exports = (app) => {
+    const moment  = require('moment');
 
     app.get('/api', function(req, res) {
         res.json({

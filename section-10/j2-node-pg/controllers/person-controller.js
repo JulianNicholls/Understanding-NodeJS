@@ -1,10 +1,10 @@
-module.exports = function (app) {
-    var parser  = require('body-parser');
+module.exports = (app) => {
+    const parser  = require('body-parser');
 
-    var urlencodedParser = parser.urlencoded({ extended: false });
-    var jsonParser       = parser.json();
+    const urlencodedParser = parser.urlencoded({ extended: false });
+    const jsonParser       = parser.json();
 
-    app.get('/person/:id', function(req, res) {
+    app.get('/person/:id', (req, res) => {
         res.render('person', {
             id: req.params.id,
             qstring: req.query.qstr || '',
@@ -13,7 +13,7 @@ module.exports = function (app) {
         });
     });
 
-    app.post('/person', urlencodedParser, function(req, res) {
+    app.post('/person', urlencodedParser, (req, res) => {
         res.render('person',  {
             id: req.body.id,
             qstring: req.query.qstr || '',
@@ -23,7 +23,5 @@ module.exports = function (app) {
         });
     });
 
-    app.post('/person.json', jsonParser, function(req, res) {
-        console.log(req.body);
-    });
+    app.post('/person.json', jsonParser, (req, res) => { console.log(req.body); });
 };

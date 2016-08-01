@@ -1,6 +1,7 @@
 # Understanding-NodeJS
 
-Javascript from the Udemy [Understanding NodeJS course](https://www.udemy.com/understand-nodejs/learn/)
+Javascript from the Udemy
+[Understanding NodeJS course](https://www.udemy.com/understand-nodejs/learn/)
 
 **NB**: If you use my files unchanged
 you will need to make some configuration changes. I have set up a number
@@ -20,4 +21,3 @@ files with either `'localhost'` or `'127.0.0.1'`
 Also, I have used PostgreSQL instead of MySQL in section 10.
 
 Feel free to contact me if you have any questions.
-
