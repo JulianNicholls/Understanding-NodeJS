@@ -10,7 +10,7 @@ module.exports = function(app) {
         hasAttachment:  false
       },
       {
-        username:       'julian',
+        username:       'test',
         task:           'Feed dog',
         complete:       false,
         hasAttachment:  false
