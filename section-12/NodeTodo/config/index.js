@@ -5,13 +5,13 @@ const configValues = require('./config')
 
 module.exports = {
   getDBConnectionString: function () {
-    let cv        = configValues;  // Just to shorten the calls below
-    let username  = '';
+    let cv    = configValues;  // Just to shorten the calls below
+    let creds = '';
 
     if(cv.username !== '') {
-      username = `${cv.username}:${cv.password}@`;
+      creds = `${cv.username}:${cv.password}@`;
     }
 
-    return `mongodb://${username}${cv.site}/${cv.db}`;
+    return `mongodb://${creds}${cv.site}/${cv.db}`;
   }
 }
