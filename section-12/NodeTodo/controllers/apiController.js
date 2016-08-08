@@ -16,7 +16,7 @@ module.exports = function(app) {
   });
 
   app.get('/api/task/:id', (req, res) => {
-    Tasks.findById({ _id: req.params.id }, (err, task) => {
+    Tasks.findById(req.params.id, (err, task) => {
       if(err)
         throw err;
 

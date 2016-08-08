@@ -1,4 +1,5 @@
 {
+  "_info":    "Because I am using a local Mongo, I do not have a username or password",
   "site":     "mongodb.local",
   "db":       "nodetodo",
   "username": "",

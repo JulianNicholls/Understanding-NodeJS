@@ -1,11 +1,17 @@
 const configValues = require('./config')
 
+// This is sensitive to whether there are user credentials. If they are present
+// (username not blank), then they are passed in the connection String
+
 module.exports = {
   getDBConnectionString: function () {
-    if(configValues.username !== '') {
-      return `mongodb://${configValues.username}:${configValues.password}@${configValues.site}/${configValues.db}`;
+    let cv        = configValues;  // Just to shorten the calls below
+    let username  = '';
+
+    if(cv.username !== '') {
+      username = `${cv.username}:${cv.password}@`;
     }
 
-    return `mongodb://${configValues.site}/${configValues.db}`;
+    return `mongodb://${username}${cv.site}/${cv.db}`;
   }
 }
